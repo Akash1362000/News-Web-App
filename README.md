@@ -30,7 +30,11 @@ Install requirements
 
 That's it. You're all Set!
 
+To run the server:
+
 `$ python manage.py runserver`
+
+Open your desired browser and head over to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 To exit the environment
 
