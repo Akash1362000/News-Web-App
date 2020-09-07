@@ -4,54 +4,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Sports</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
 
   {% block head %}{% endblock %}
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link mr-5" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mr-5" href="#">About Us</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categories
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Business</a>
-            <a class="dropdown-item" href="#">Health</a>
-            <a class="dropdown-item" href="#">Entertainment</a>
-            <a class="dropdown-item" href="#">Sports</a>
-            <a class="dropdown-item" href="#">Travel</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">More</a>
-          </div>
-        </li>
-        
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Type something" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+  <body><nav class="navbar navbar-expand-lg navbar-danger bg-danger ">
+    <li class="nav-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSy7cnRA3tIIQxk-cE-VtdpWt4xuFxP6LcN1A&usqp=CAU" style="width: 80px;">
+    </li>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link mr-3" href="home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3" href="sports.html">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-3" href="business.html">Business</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="sports.html">Sports</a>
+              <a class="dropdown-item" href="entertainment.html">Entertainment</a>
+              <a class="dropdown-item" href="?#">Travel</a>
+              <a class="dropdown-item" href="business.html">Business</a>
+            </div>
+          </li>
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Type something" aria-label="Search">
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  
 
   <!-- Body -->
   {% block body %}{% endblock %}
 
-  <footer class="navbar navbar-dark bg-dark mt-5">
+  <footer class="navbar navbar-danger bg-danger mt-5">
     <a class="navbar-brand" href="#">Terms of Use</a>
     <a class="navbar-brand" href="#">Privacy Policy</a>
-    <a class="navbar-brand" href="{% url 'contact-us' %}">Contact Us</a>
+    <a class="navbar-brand" href="contact_us.html">Contact Us</a>
     <a class="navbar-brand" href="#">Help</a>
-  </h6>
   </footer>
