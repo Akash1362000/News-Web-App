@@ -8,6 +8,7 @@ def Home(request):
 def ContactUs(request):
     return render(request, 'newsapp/contact_us.html')
 
+<<<<<<< HEAD
 
 def Feedback(request):
     return render(request, 'newsapp/feedbacks.html')
@@ -36,3 +37,13 @@ def Entertainment(request):
 def Business(request):
     return render(request, 'newsapp/business.html')
 
+=======
+def forgot_password(request):
+    return render(request, 'newsapp/forget.html')
+    
+def feedback(request):
+    return render(request, 'newsapp/feedback.html')
+
+def registration(request):
+    return render(request, 'newsapp/registration.html')
+>>>>>>> c267fcc8387ff7722811aba1c3b53d26c3a2689e
