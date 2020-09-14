@@ -4,7 +4,7 @@
 <!-- Head -->
 {% block head %}
 <title>Forget Password</title>
-<link rel="stylesheet" href="{ %static 'newsapp/style.css' % }">
+<link rel="stylesheet" href="{% static 'newsapp/style.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -37,7 +37,7 @@
     
         </div>
     <div>
-        <span><h3>Need Help?</h3><a href="contact.html"> Contact Us</a></span>
+        <span><h3>Need Help?</h3><a href="{% url 'contact-us' %}"> Contact Us</a></span>
     </div>
     </div>
 </div>

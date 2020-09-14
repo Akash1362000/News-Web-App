@@ -8,3 +8,4 @@ urlpatterns = [
     path('registration',views.registration, name='Registration'),
     path('forgot',views.forgot_password, name='Forgot_Password')
 ]
+
