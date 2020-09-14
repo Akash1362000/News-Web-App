@@ -1,0 +1,66 @@
+{% extends 'newsapp/base.html' %}
+{% load static %}
+
+<!-- Head -->
+{% block head %}
+<title>Registration</title>
+<link rel="stylesheet" href="{% static 'newsapp/style.css' %}">
+{% endblock %}
+
+{% block body %}
+<body>
+<section>
+    <div class="container">
+    <div class="logo">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSy7cnRA3tIIQxk-cE-VtdpWt4xuFxP6LcN1A&usqp=CAU">
+    </div>
+    <div class="ContactForm">
+    
+        <h1 class="text-center mt-5 font - weight - bold">Create Account</h1>
+                        <hr class="bg-white">
+                    
+                        <h7>Now get your personalised news................ </h7>
+                        <h5 class="text-center">Create Account </h5>
+                       
+             <div class="formbox">
+            <div class="inputBox w50">
+                <input type="text" name="" required>
+                <span>Name*</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text" name=""required>
+                <span>Email Address*</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="number" name="" required>
+                <span>Age</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text" name="" required>
+                <span>Mobile Number</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text/number" name="" required>
+                <span>Username*</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text/number" name="" required>
+                <span>Password*</span>
+            </div>
+    
+            <div class="inputBox w50">
+            <input type="Submit" value="Sign Up">
+            
+            </div>
+            <div>
+                <span> <a href="login.html">Already Exist?</a></span>
+            </div>
+            </div>
+        </div>
+    </div> 
+    </div>
+    </div>
+    </div>
+        </div>
+    </section>
+{% endblock body %}

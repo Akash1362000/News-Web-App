@@ -1,0 +1,58 @@
+{% extends 'newsapp/base.html' %}
+{% load static %}
+
+<!-- Head -->
+{% block head %}
+<title>Login</title>
+<link rel="stylesheet" href="{ %static 'newsapp/style.css' % }">
+{% endblock %}
+
+{% block body %}
+<body>
+<section>
+    <div class="container">
+        <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSy7cnRA3tIIQxk-cE-VtdpWt4xuFxP6LcN1A&usqp=CAU">
+        </div>
+
+<div class="ContactForm">
+
+<h1 class="text-center mt-5 font - weight - bold">Sign In</h1>
+                <hr class="bg-white">
+            
+                
+                <h4 class="text-center">Login Info </h4>
+               
+    
+    <div class="inputBox w50">
+        <input type="text/number" name="" required>
+        <span>Username/Phonenumber/Email*</span>
+    </div><br>
+
+    <div class="inputBox w50">
+        <input type="text/number" name="" required>
+        <span>Password*</span>
+    </div>
+    <div class="formbox">
+    <div>
+        <label class="radio-inline"><input type="radio" name="experience" value="bad">Remember Me</label>  
+    </div>
+    <div>
+        <h5 class="text-right bottom">Forget Password?</h5>
+    </div>
+    <div class="inputBox w50">
+        <input type="Submit" value="Login">
+    
+        </div>
+    <div>
+        <span><a href="registration.html"> New User?</a></span>
+    </div>
+    </div>
+</div>
+</div> 
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endblock body %}

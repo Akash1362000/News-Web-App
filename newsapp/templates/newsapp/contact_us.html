@@ -3,10 +3,79 @@
 
 <!-- Head -->
 {% block head %}
-<title>NewsApp</title>
+<title>ContactUs</title>
+<link rel="stylesheet" type="text/css" href="{% static 'newsapp/style.css' %}">
 {% endblock %}
 
 <!-- Body -->
+
 {% block body %}
-    <h1>Contact Us Page Code goes here! </h1>
+<body   >
+<section>
+    <div class="container">
+    <div class="contactinfo">
+    <div>
+    <h2>Contact Info</h2>
+    <ul class="info">
+    <li>
+    <span><img src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/14432100661535698998-512.png" height="20 px" width="20px" ></span>
+    <span class="akash">DY Patil College Of Engineering<br>
+    Akurdi<br>
+    Pune</span>
+    </li>
+    <li>
+    <span><img src="https://www.iconpacks.net/icons/1/free-mail-icon-142-thumb.png" height="20 px" width="20 px"></span>
+    <span><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRlQHTbWXGjWWWLkTMDfncMjMdzlsZgzCGJKhxKXZFvBMFdJxMHqFjZSjzFPrxjPwtRjJbv">newsportal@gmail.com</a></span>
+    </li>
+    <li>
+    <span><img src="https://img.icons8.com/dotty/2x/phone.png" height="20 px" width="20 px"></span>
+    <span>123-456-789</span>
+    </li>
+    </ul>
+    </div>
+     <ul class="sci">
+        <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_black-512.png" height="30px"></a></li>
+        <li><a href="#"><img src="https://i.pinimg.com/originals/63/9b/3d/639b3dafb544d6f061fcddd2d6686ddb.png" height="30px"></a></li>
+        <li><a href="#"><img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/43-twitter-512.png" height="30px"></a></li>
+     </ul>
+    
+    </div>
+    <div class="ContactForm">
+        <h2>Send a Message</h2>
+        <div class="formbox">
+            
+            <div class="inputBox w50">
+                <input type="text" name="" required>
+                <span>First Name</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text" name="" required>
+                <span>Last Name</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text" name="" required>
+                <span>Email Address</span>
+            </div>
+            <div class="inputBox w50">
+                <input type="text" name="" required>
+                <span>Mobile Number</span>
+            </div>
+            <div class="inputBox w100">
+                    <textarea name="" required></textarea>
+                    <span>Write your message here....</span>
+            </div>
+            <div class="inputBox w50">
+            <input type="Submit" value="Submit">
+            
+            </div>
+            </div>
+        </div>
+    </div> 
+    </div>
+    </div>
+    </div>
+        </div>
+    </section>
+</body>
+    
 {% endblock body %}

@@ -8,7 +8,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
   {% block head %}{% endblock %}
 </head>
 
@@ -17,7 +16,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link mr-5" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link mr-5" href="{% url 'news-home' %}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link mr-5" href="#">About Us</a>
@@ -27,16 +26,18 @@
             Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Business</a>
+            <a class="dropdown-item" href="{% url 'business' %}">Business</a>
             <a class="dropdown-item" href="#">Health</a>
-            <a class="dropdown-item" href="#">Entertainment</a>
-            <a class="dropdown-item" href="#">Sports</a>
+            <a class="dropdown-item" href="{% url 'entertainment' %}">Entertainment</a>
+            <a class="dropdown-item" href="{% url 'sports' %}">Sports</a>
             <a class="dropdown-item" href="#">Travel</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">More</a>
           </div>
         </li>
-        
+        <li class="nav-item">
+          <a class="nav-link mr-5" href="{% url 'Registration' %}">Sign Up</a>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Type something" aria-label="Search">
@@ -48,10 +49,10 @@
   <!-- Body -->
   {% block body %}{% endblock %}
 
-  <footer class="navbar navbar-dark bg-dark mt-5">
+  <footer class="navbar navbar-danger bg-dark mt-5">
     <a class="navbar-brand" href="#">Terms of Use</a>
     <a class="navbar-brand" href="#">Privacy Policy</a>
     <a class="navbar-brand" href="{% url 'contact-us' %}">Contact Us</a>
-    <a class="navbar-brand" href="#">Help</a>
+    <a class="navbar-brand" href="{% url 'Feedback' %}">Feedback</a>
   </h6>
   </footer>
