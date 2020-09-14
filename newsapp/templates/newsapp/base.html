@@ -26,10 +26,10 @@
             Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Business</a>
+            <a class="dropdown-item" href="{% url 'business' %}">Business</a>
             <a class="dropdown-item" href="#">Health</a>
-            <a class="dropdown-item" href="#">Entertainment</a>
-            <a class="dropdown-item" href="#">Sports</a>
+            <a class="dropdown-item" href="{% url 'entertainment' %}">Entertainment</a>
+            <a class="dropdown-item" href="{% url 'sports' %}">Sports</a>
             <a class="dropdown-item" href="#">Travel</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">More</a>
@@ -49,7 +49,7 @@
   <!-- Body -->
   {% block body %}{% endblock %}
 
-  <footer class="navbar navbar-dark bg-dark mt-5">
+  <footer class="navbar navbar-danger bg-dark mt-5">
     <a class="navbar-brand" href="#">Terms of Use</a>
     <a class="navbar-brand" href="#">Privacy Policy</a>
     <a class="navbar-brand" href="{% url 'contact-us' %}">Contact Us</a>
