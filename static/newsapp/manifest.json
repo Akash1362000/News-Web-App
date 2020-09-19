@@ -1,0 +1,55 @@
+{
+    "name": "News Web App",
+    "short_name": "News Web App",
+    "theme_color": "#c62828",
+    "background_color": "#010204",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": ".",
+    "description": "Get all the latest news at one place!",
+    "orientation": "any",
+    "dir": "ltr",
+    "lang": "en-US",
+    "icons": [
+      {
+        "src": "/static/newsapp/news512.png",
+        "type": "image/png",
+        "sizes": "1024x1024"
+      },
+      {
+        "src": "/static/newsapp/news512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/static/newsapp/news256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "/static/newsapp/news128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "/static/newsapp/news64.png",
+        "sizes": "64x64",
+        "type": "image/png"
+      },
+      {
+        "src": "/static/newsapp/news32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "/static/newsapp/news24.png",
+        "sizes": "24x24",
+        "type": "image/png"
+      },
+      {
+        "src": "/static/newsapp/news16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      }
+    ]
+  }

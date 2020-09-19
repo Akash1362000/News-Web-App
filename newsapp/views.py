@@ -45,7 +45,7 @@ def Entertainment(request):
 def Business(request):
     return render(request, 'newsapp/business.html')
 
-def index(request):
+""" def index(request):
     
     newsapi = NewsApiClient(api_key ='492204b5fab24074b7e237e955eb3218')
     top = newsapi.get_top_headlines(sources ='techcrunch')
@@ -64,5 +64,8 @@ def index(request):
 
 
     return render(request, 'newsapp/index.html', context ={"mylist":mylist})
-
+ """
+#Test view for Materialized Home Page - Feel free to delete it
+def test(request):
+    return render(request, 'newsapp/test.html')
 

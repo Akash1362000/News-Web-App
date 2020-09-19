@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', views.Home, name='news-home'),
@@ -10,5 +11,9 @@ urlpatterns = [
     path('registration',views.Registration, name='Registration'),
     path('sports',views.Sports, name='sports'),
     path('business',views.Business, name='business'),
-    path('entertainment',views.Entertainment, name='entertainment')
+    path('entertainment',views.Entertainment, name='entertainment'),
+    path('test', views.test, name='test'), #test url pattern
+    #path('', include('pwa.urls')),
+    path('serviceworker.js', (TemplateView.as_view(template_name="newsapp/serviceworker.js", 
+    content_type='application/javascript', )), name='serviceworker.js'),
 ]
