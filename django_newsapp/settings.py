@@ -24,9 +24,9 @@ PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'newsapp/static/newsapp', 'serv
 SECRET_KEY = '(qm*9%)ui9lk&s#bcyvrwr5j)c!=!s*3bb!)8k!83pzcl(bjzu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2']
+ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2', 'newswebapp.herokuapp.com']
 
 
 # Application definition
