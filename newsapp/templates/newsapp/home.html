@@ -3,13 +3,58 @@
 
 <!-- Head -->
 {% block head %}
-<title>NewsApp</title>
+<title>NewsApp - Home</title>
 {% endblock %}
 
 <!-- Body -->
 {% block body %}
   <body>
-    <div class="row container mt-5">
+    <div class="container row">
+    {% for new, des, i, url in mylist %}
+   
+      <div class="col s12 m12 l6">
+        <div class="card card-panel hoverable">
+          <div class="card-image">
+            <img src="{{ i }}">
+          </div>
+          <div class="card-content">
+            <span class="card-title">{{ new }}
+              {{ value|linebreaks }}
+            </span>
+          </div>
+          <div class="divider"></div>
+          <div class="card-content">
+            <p>{{ des }}
+              {{ value|linebreaks }}</p>
+          </div>
+          <div class="card-action">
+            <a href="{{ url }}" target="_blank">Read more</a>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+    {% endfor %}
+  </div>
+
+<!--     <div class="container">
+    <div class="card card-panel hoverable">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="images/office.jpg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Covid-19 takes no time to increase...BEWARE!<i class="material-icons right">more_vert</i></span>
+        <p><a href="#">This is a link</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div> 
+  </div> 
+ -->
+    <!-- <div class="row container mt-5">
       <div class="col-md-1"></div>
       <div class="col-md-9">
         <div class="card mb-3">
@@ -90,7 +135,7 @@
                   </div>
               </div>  
           </div>
-    </div>          
+    </div>           -->
   </body>
 {% endblock body %}
 

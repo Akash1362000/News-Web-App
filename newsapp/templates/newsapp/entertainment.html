@@ -3,159 +3,35 @@
 
 <!-- Head -->
 {% block head %}
-<title>Entertainment</title>
+<title>NewsApp - Entertainment</title>
 {% endblock %}
 
 <!-- Body -->
 {% block body %}
-<body><nav class="navbar navbar-expand-lg navbar-danger bg-danger ">
-    <li class="nav-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSy7cnRA3tIIQxk-cE-VtdpWt4xuFxP6LcN1A&usqp=CAU" style="width: 80px;">
-    </li>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link mr-3" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mr-3" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mr-3" href="Sports2.html">Sports</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mr-3" href="Business.html">Business</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              More
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Health</a>
-              <a class="dropdown-item" href="#">Entertainment</a>
-              <a class="dropdown-item" href="?#">Travel</a>
-              <a class="dropdown-item" href="#">Politics</a>
+  <body>
+    <div class="row container">
+      {% for new, des, i, url in mylist %}
+        <div class="col s12 m12 l6">
+          <div class="card card-panel hoverable">
+            <div class="card-image">
+              <img src="{{ i }}">
             </div>
-          </li>
-          
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Type something" aria-label="Search">
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-  
-  
-    
-  
-  
-    <title>Entertainment</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-  
-  
-    <section>
-    <div class="card bg-light mb-3">
-      <div class="row container mt-5">
-          <div class="col-md-1"></div>
-          <div class="col-md-9">
-              <div class="card mb-3">
-                  <img src="SP.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Singer S P Balasubrahmanyam Tests Negative For COVID-19 But Still On Ventilator </h5>
-                    <p class="card-text">Chennai: Veteran singer S P Balasubrahmanyam, who is being treated for COVID-19 at Chennai's MGM Healthcare Hospital, tested negative on Monday, his son S P Charan said. However, the 74-year-old singer is still on ventilator. Sharing a video on his Instagram profile, SPB's son S P Charan said, "We were expecting dad's lungs to improve as they were but unfortunately we are still not at that point where we could rid him of the ventilator. But the good news is that dad is COVID negative." The signer was admitted to Chennai's MGM Healthcare hospital on August 5 after he tested positive for the virus. S P Balasubrahmanyam had mild symptoms when he was taken to hospital this month. However, he was later moved to the Intensive Care Unit or ICU and placed on life support when his condition deteriorated.</p>
-                    <a href="#" class="btn btn-primary ">Read More</a>
-                    <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-          
-        </div>    
-                  <div class="col-md-1"></div>
-                  <div class="col-md-1">
-                      <div class="card mb-3" style="width: 18rem;">
-                          <div class="card-header">Stock Updates</div>
-                          <div class="card-body">
-                            <h5 class="card-title">Sensex Falls Over 250 Points From Day's High As Financial, Energy Stocks Drop</h5>
-                            <p class="card-text">Domestic stock markets gave up early gains on Thursday, amid selling pressure in banking, financial services and energy stocks. The S&amp;P BSE Sensex index dropped as much as 259.73 points from the strongest level of the day to hit 38,976.63 on the downside in early afternoon deals. The broader NSE Nifty 50 benchmark dropped to as low as 11,514.80, receding from an intraday high of 11,584.95. At 12:12 pm, the Sensex traded at 38,987.00, down 99.03 points - or 0.25 per cent - from its previous close, while the Nifty was up 5.10 points - or 0.04 per cent - at 11,540.10. </p>
-                          </div>
-              </div>      
-              </div>
-          </div>  
-          
-          <div class="row container mt-5">
-              <div class="col-md-1"></div>
-              <div class="col-md-9">
-                  <h2>This is the head</h2>
-              </div>
-     
-              <div class="col-md-1"></div>
-              <div class="col-md-1">
-                  <div class="card mb-3" style="width: 18rem;">
-                      <div class="card-header">AD</div>
-                      <div class="card-body">
-                        <h5 class="card-title">Advertisment</h5>
-                        <p class="card-text">The rupee ddomestic equities continued to put pressure on the rupee, say</p>
-                      </div>
-                  </div>    
-              </div>
+            <div class="card-content">
+              <span class="card-title">{{ new }}
+                {{ value|linebreaks }}
+              </span>
+            </div>
+            <div class="divider"></div>
+            <div class="card-content">
+              <p>{{ des }}
+                {{ value|linebreaks }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ url }}" target="_blank">Read more</a>
+            </div>
           </div>
-  
-         <div class="row container mt-5">
-          <div class="col-md-1"></div>
-          <div class="col-md-2">
-              <div class="card" style="width: 18rem;">
-                  <img src="Sara.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">In Sara Ali Khan's Dreamland, She Is A Water Baby One Day, Chameleon The Next</h5>
-                    <p class="card-text">New Delhi: Sara Ali Khan is busy dreaming of all the places she wishes to be at and that clearly reflects on her Instagram profile. After posting pictures from her pool time at her house in Mumbai over the weekend, the 25-year-old actress shared a chunk of memories from an undisclosed lush green location. In the pictures, Sara can be seen dressed in an outfit with a camouflage print. She accessorised her look with a sling bag, a pair of black sunglasses and oodles of drama. She perfectly summed up the mood of the pictures in a sentence, "Hiding from 2020 like..." She accompanied her post with the hashtag #camouflage #mondaymood and #mondaymotivation.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                  </div>
-                </div>
-          </div>
-  
-          <div class="col-md-1"></div>
-          <div class="col-md-2">
-              <div class="card" style="width: 18rem;">
-                  <img src="tig.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">"Tiger Shroff Has "Always Wanted To Sing" And Now He Will. Details Of His Song Unbelievable Here</h5>
-                    <p class="card-text">New Delhi: You've seen him act and dance, you have also seen him doing martial arts. Now get ready to hear him sing. We are talking about Bollywood actor Tiger Shroff, who is all set to make his debut as a singer. On Monday morning, the actor shared a motion poster of his first track Unbelievable on his social media profile. Dressed in a white shirt, a black tie and wearing sunglasses, Tiger Shroff can be seen posing with a mic in his hand. Sharing the poster, Tiger Shroff wrote: "Always wanted to sing and dance to my own song, but never really had the courage to take it forward. Spent a lot of time exploring and working this lockdown and discovered something new. It's been an 'unbelievable' experience, and I'm excited to share this humble effort with you soon. #YouAreUnbelievable #TeaserOutSoon.""</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                  </div>
-                </div>
-          </div>
-  
-          <div class="col-md-1"></div>
-          <div class="col-md-2">
-              <div class="card" style="width: 18rem;">
-                  <img src="fam.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Hrithik Roshan, Sussanne Khan And Family Made Rakesh Roshan's Birthday Special</h5>
-                    <p class="card-text">New Delhi: It was a happy day at the Roshans' house as Rakesh Roshan celebrated his 71st birthday on Sunday. His wife Pinky Roshan shared a glimpse of his birthday festivities with family, by posting a video on her Instagram profile. In the video Rakesh Roshan can be seen cutting his birthday cake. Besides Hrithik Roshan, we also spotted his ex-wife Sussanne Khan and their children Hrehaan and Hridhaan in the video. Hrithik's sister Sunaina Roshan was also present at the festivities. Rakesh Roshan's brother and music composer Rajesh Roshan was also present at the get-together. Sharing a video on Instagram, Pinky Roshan wrote: "Happy Birthday Mr Roshan. We make it with love and memories.""</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                  </div>
-                </div>
-          </div>
-  
-          <div class="col-md-2"></div>
-          <div class="col-md-1">
-              <div class="card mb-3" style="width: 18rem;">
-                  <div class="card-header">Currency</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Rupee Closes At 73.47 Against Dollar, Extends Losses To Second Day</h5>
-                    <p class="card-text">The rupee dropped by 44 paise - or 0.60 per cent - to close at 73.47 against the US dollar on Thursday. It moved within a 21-paise range, between 73.21 and 73.48 during the four-hour session before ending near its intraday low. Strength in the greenback and weakness in domestic equities continued to put pressure on the rupee, say analysts.</p>
-                  </div>
-              </div>    
-          </div>
-      </div>
+        </div>
+    {% endfor %}
     </div>
-    </section>
-               
+  </body>
 {% endblock body %}

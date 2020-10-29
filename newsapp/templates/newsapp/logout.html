@@ -1,0 +1,38 @@
+{% extends 'newsapp/base.html' %}
+{% load static %}
+{% load materializecss %}
+
+<!-- Head -->
+{% block head %}
+<title>NewsApp - Logout</title>
+{% endblock %}
+
+
+<!-- Body -->
+{% block body %}
+<style>.bg-gra-03 {
+    background: -webkit-gradient(linear, left bottom, right top, from(#08aeea), to(#b721ff));
+    background: -webkit-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
+    background: -moz-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
+    background: -o-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
+    background: linear-gradient(to top right, #08aeea 0%, #b721ff 100%);
+  }
+  .white1{
+      background-color: whitesmoke;
+      border-radius: 2%;
+  }
+  .left{
+      margin-left: 10px;
+  }
+  .bottom{
+      margin-bottom: 22px;
+  }
+  </style>
+  <body class="bg-gra-03"><br><br>
+    <div class="container row white1 hoverable"><br>
+        <h5>You have successfully logged out!</h5><br>
+        <div class="divider"></div>
+        <p><a href="{% url 'login' %}" class="left bottom">Login again</a></p>
+    </div><br><br><br><br>
+</body>
+{% endblock body %}

@@ -5,7 +5,7 @@
 
 <!-- Head -->
 {% block head %}
-<title>NewsApp - Login</title>
+<title>NewsApp - Register</title>
 {% endblock %}
 
 
@@ -31,10 +31,10 @@
                 <legend><h4>Join Today</h4></legend>
                 {{ form|materializecss }}
                 <br>
-                <button class="btn waves-effect waves-light green" type="submit" name="action" style="margin-left: 10px; margin-bottom:15px">Login
+                <button class="btn waves-effect waves-light green" type="submit" name="action" style="margin-left: 10px; margin-bottom:15px">Sign Up
                     <i class="material-icons right">send</i>
                 </button>
-                <small style="margin-left:15px;">New here ? <a href="{% url 'register' %}">Sign up</a></small>
+                <small style="margin-left:15px;">Already have an account ? <a href="{% url 'login' %}">Sign in</a></small>
             </fieldset><br>
         </form>
     </div><br>
