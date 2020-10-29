@@ -23,8 +23,4 @@ urlpatterns = [
     #path('', include('pwa.urls')),
     path('serviceworker.js', (TemplateView.as_view(template_name="newsapp/serviceworker.js", 
     content_type='application/x-javascript', )), name='serviceworker.js'),
-    path('webpush', include('webpush.urls')),
-
-    path('send_push', views.send_push), # Web push url Patterns
-    path('webpush/', include('webpush.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
