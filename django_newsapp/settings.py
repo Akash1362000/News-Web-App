@@ -145,6 +145,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,  'static')
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # Default layout to use with "crispy_forms"
 CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
 MATERIALIZECSS_ICON_SET = 'fontawesome'
