@@ -13,3 +13,4 @@ var instance = M.Carousel.init({
 
 var collapsibleElem = document.querySelector('.collapsible');
 var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+

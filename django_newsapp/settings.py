@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pwa'
+    'pwa',
+    'webpush',
+    'crispy_forms',
+    'crispy_forms_materialize',
+    'materializecssform'
 ]
 
 MIDDLEWARE = [
@@ -57,7 +61,7 @@ ROOT_URLCONF = 'django_newsapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # For Web push
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +75,21 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_newsapp.wsgi.application'
+
+#Webpush Settings - https://github.com/safwanrahman/django-webpush
+#To create Vapid Public & Private Key, refer - https://github.com/web-push-libs/vapid/tree/main/python
+WEBPUSH_SETTINGS = {
+    "VAPID_PUBLIC_KEY": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJaUfQKrcKpsqUvdXJuyTJCkTRxGkfwKFE0i+qubXt74MTm7pRahURD7gmEBE7C7s9bV+LndM/Cb1vf0U/cFXHA==",
+    "VAPID_PRIVATE_KEY":"MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgQAgwkuAoForlH1dimB1PzViova2rpzhFkxfkQnlayp6hRANCAAQlpR9AqtwqmypS91cm7JMkKRNHEaR/AoUTSL6q5te3vgxObulFqFREPuCYQETsLuz1tX4ud0z8JvW9/RT9wVcc",
+    "VAPID_ADMIN_EMAIL": "akash.shrivastava136@gmail.com"
+}
+
+{
+    "BACKEND": "django_jinja.backend.Jinja2",
+    "OPTIONS": {
+      'extensions': ['webpush.jinja2.WebPushExtension'],
+    }
+},
 
 
 # Database
@@ -126,3 +145,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,  'static')
 ]
 
+# Default layout to use with "crispy_forms"
+CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
+MATERIALIZECSS_ICON_SET = 'fontawesome'
+
+LOGIN_REDIRECT_URL = 'news-home'

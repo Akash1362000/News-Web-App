@@ -9,9 +9,10 @@
 <!-- Body -->
 {% block body %}
   <body>
-    {% for new, des, i in mylist %}
     <div class="container row">
-      <div class="col s12 m6">
+    {% for new, des, i, url in mylist %}
+   
+      <div class="col s12 m12 l6">
         <div class="card card-panel hoverable">
           <div class="card-image">
             <img src="{{ i }}">
@@ -27,14 +28,15 @@
               {{ value|linebreaks }}</p>
           </div>
           <div class="card-action">
-            <a href="#">This is a link</a>
+            <a href="{{ url }}" target="_blank">Read more</a>
+            
           </div>
         </div>
       </div>
       
-    </div>
-    {% endfor %}
     
+    {% endfor %}
+  </div>
 
 <!--     <div class="container">
     <div class="card card-panel hoverable">
