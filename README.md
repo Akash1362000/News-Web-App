@@ -11,6 +11,10 @@ Checkout the live Website [here](https://newswebapp.herokuapp.com/)!
 
 Find the detailed project report [here](https://drive.google.com/file/d/1CotBwalG53YZ9wDjjDHIA-nrLDLWkJHn/view?usp=sharing)! 📜
 
+### Demo 🎥
+
+![NewsApp Demo](https://github.com/Akash1362000/News-Web-App/blob/master/static/newsapp/NewsApp.gif)
+
 ### Meet the Developers ✨🌟
 
 <table>
