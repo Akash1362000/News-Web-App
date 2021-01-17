@@ -93,3 +93,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+Leave a ⭐ from [here](https://github.com/Akash1362000/News-Web-App) if you like 😁
