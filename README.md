@@ -1,7 +1,5 @@
 # News-Web-App
 
-News Web App 📰 built using Python Django 🌐 and NewsAPI 🚀 Fetches latest news. 😍 It is a Progressive Web App (PWA) which enables users 👨‍👩‍👦 to install it on their mobile phones 📱 (Android & iOS) as well as Desktop 💻 (Windows, Linux, etc.) 🔥
-
 ![NewsApp Banner](https://i.imgur.com/ho9IUf1.gif)
 
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://newswebapp.herokuapp.com/)
@@ -9,6 +7,7 @@ News Web App 📰 built using Python Django 🌐 and NewsAPI 🚀 Fetches latest
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAkash1362000%2FNews-Web-App%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Akash1362000/News-Web-App/graphs/commit-activity)
 
+News Web App 📰 built using Python Django 🌐 and NewsAPI 🚀 Fetches latest news. 😍 It is a Progressive Web App (PWA) which enables users 👨‍👩‍👦 to install it on their mobile phones 📱 (Android & iOS) as well as Desktop 💻 (Windows, Linux, etc.) 🔥
 
 Checkout the live Website [here](https://newswebapp.herokuapp.com/)!
 
