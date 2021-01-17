@@ -1,6 +1,8 @@
 # News-Web-App
 Project for SL3 DYPCOE
 
+![NewsApp Banner](https://i.imgur.com/ho9IUf1.gif)
+
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://newswebapp.herokuapp.com/)
 [![travis-ci](https://api.travis-ci.com/Akash1362000/Django_Student_Management_System.svg?token=nv6BYq1BY3w4kf8uZuGj&branch=main)](https://travis-ci.com/github/Akash1362000/Django_Student_Management_System/)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAkash1362000%2FNews-Web-App%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
