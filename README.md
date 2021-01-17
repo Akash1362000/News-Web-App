@@ -1,5 +1,6 @@
 # News-Web-App
-Project for SL3 DYPCOE
+
+News Web App 📰 built using Python Django 🌐 and NewsAPI 🚀 Fetches latest news. 😍 It is a Progressive Web App (PWA) which enables users 👨‍👩‍👦 to install it on their mobile phones 📱 (Android & iOS) as well as Desktop 💻 (Windows, Linux, etc.) 🔥
 
 ![NewsApp Banner](https://i.imgur.com/ho9IUf1.gif)
 
