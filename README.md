@@ -28,7 +28,7 @@ Find the detailed project report [here](https://drive.google.com/file/d/1CotBwal
 		
 </table>
 
-## Development
+## Development 🛠
 Note : Make sure you have Python version 3.8+
 
 Environment Setup
