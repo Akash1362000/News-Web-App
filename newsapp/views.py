@@ -170,11 +170,6 @@ def Business(request):
     return render(request, "newsapp/business.html", context={"mylist": mylist})
 
 
-# Test view for Materialized Home Page - Feel free to delete it
-def test(request):
-    return render(request, "newsapp/test.html")
-
-
 def register(request):
     form_class = UserRegisterForm
     form = form_class(request.POST or None)

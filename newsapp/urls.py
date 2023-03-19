@@ -28,8 +28,6 @@ urlpatterns = [
     path("business", views.Business, name="business"),
     path("entertainment", views.Entertainment, name="entertainment"),
     path("register", views.register, name="register"),
-    path("test", views.test, name="test"),  # test url pattern
-    # path('', include('pwa.urls')),
     path(
         "serviceworker.js",
         (
