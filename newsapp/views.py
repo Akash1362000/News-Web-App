@@ -2,26 +2,12 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from newsapi import NewsApiClient
 from .forms import UserRegisterForm
+from .services import get_news
 
 
 def Home(request):
-    newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
-    top = newsapi.get_top_headlines(sources="techcrunch")
-
-    l = top["articles"]
-    desc = []
-    news = []
-    img = []
-    url = []
-
-    for i in range(len(l)):
-        f = l[i]
-        news.append(f["title"])
-        desc.append(f["description"])
-        img.append(f["urlToImage"])
-        url.append(f["url"])
-    mylist = zip(news, desc, img, url)
-    return render(request, "newsapp/home.html", context={"mylist": mylist})
+    news_data = get_news(country="in", category="general")
+    return render(request, "newsapp/home.html", context={"mylist": news_data})
 
 
 def Technology(request):
