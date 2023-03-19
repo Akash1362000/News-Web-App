@@ -4,11 +4,13 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+
 # Imports for Web Push Notifications
 from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET, require_POST
+
 # Importing News API
 from newsapi import NewsApiClient
 
