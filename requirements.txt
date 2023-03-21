@@ -6,3 +6,5 @@ django-materializecss-form==1.1.17
 newsapi-python==0.2.6
 black==23.1.0
 python-dotenv==1.0.0
+psycopg2-binary==2.9.5
+dj-database-url==1.2.0
