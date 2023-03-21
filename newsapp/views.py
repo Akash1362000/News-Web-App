@@ -10,138 +10,6 @@ def Home(request):
     return render(request, "newsapp/home.html", context={"mylist": news_data})
 
 
-def Technology(request):
-    newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
-    top = newsapi.get_top_headlines(category="technology", country="in")
-
-    l = top["articles"]
-    desc = []
-    news = []
-    img = []
-    url = []
-
-    for i in range(len(l)):
-        f = l[i]
-        news.append(f["title"])
-        desc.append(f["description"])
-        img.append(f["urlToImage"])
-        url.append(f["url"])
-    mylist = zip(news, desc, img, url)
-    return render(request, "newsapp/technology.html", context={"mylist": mylist})
-
-
-def Health(request):
-    newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
-    top = newsapi.get_top_headlines(category="health", country="in")
-
-    l = top["articles"]
-    desc = []
-    news = []
-    img = []
-    url = []
-
-    for i in range(len(l)):
-        f = l[i]
-        news.append(f["title"])
-        desc.append(f["description"])
-        img.append(f["urlToImage"])
-        url.append(f["url"])
-    mylist = zip(news, desc, img, url)
-    return render(request, "newsapp/health.html", context={"mylist": mylist})
-
-
-def Science(request):
-    newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
-    top = newsapi.get_top_headlines(category="science", country="in")
-
-    l = top["articles"]
-    desc = []
-    news = []
-    img = []
-    url = []
-
-    for i in range(len(l)):
-        f = l[i]
-        news.append(f["title"])
-        desc.append(f["description"])
-        img.append(f["urlToImage"])
-        url.append(f["url"])
-    mylist = zip(news, desc, img, url)
-    return render(request, "newsapp/science.html", context={"mylist": mylist})
-
-
-def ContactUs(request):
-    return render(request, "newsapp/contact_us.html")
-
-
-def Feedback(request):
-    return render(request, "newsapp/feedback.html")
-
-
-def Forget(request):
-    return render(request, "newsapp/forget.html")
-
-
-def Sports(request):
-    newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
-    top = newsapi.get_top_headlines(category="sports", country="in")
-
-    l = top["articles"]
-    desc = []
-    news = []
-    img = []
-    url = []
-
-    for i in range(len(l)):
-        f = l[i]
-        news.append(f["title"])
-        desc.append(f["description"])
-        img.append(f["urlToImage"])
-        url.append(f["url"])
-    mylist = zip(news, desc, img, url)
-    return render(request, "newsapp/sports.html", context={"mylist": mylist})
-
-
-def Entertainment(request):
-    newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
-    top = newsapi.get_top_headlines(category="entertainment", country="in")
-
-    l = top["articles"]
-    desc = []
-    news = []
-    img = []
-    url = []
-
-    for i in range(len(l)):
-        f = l[i]
-        news.append(f["title"])
-        desc.append(f["description"])
-        img.append(f["urlToImage"])
-        url.append(f["url"])
-    mylist = zip(news, desc, img, url)
-    return render(request, "newsapp/entertainment.html", context={"mylist": mylist})
-
-
-def Business(request):
-    newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
-    top = newsapi.get_top_headlines(category="business", country="in")
-
-    l = top["articles"]
-    desc = []
-    news = []
-    img = []
-    url = []
-
-    for i in range(len(l)):
-        f = l[i]
-        news.append(f["title"])
-        desc.append(f["description"])
-        img.append(f["urlToImage"])
-        url.append(f["url"])
-    mylist = zip(news, desc, img, url)
-    return render(request, "newsapp/business.html", context={"mylist": mylist})
-
-
 def register(request):
     form_class = UserRegisterForm
     form = form_class(request.POST or None)
@@ -157,3 +25,33 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, "newsapp/register.html", {"form": form})
+
+
+def Technology(request):
+    news_data = get_news(country="in", category="technology")
+    return render(request, "newsapp/technology.html", context={"mylist": news_data})
+
+
+def Health(request):
+    news_data = get_news(country="in", category="health")
+    return render(request, "newsapp/health.html", context={"mylist": news_data})
+
+
+def Science(request):
+    news_data = get_news(country="in", category="science")
+    return render(request, "newsapp/science.html", context={"mylist": news_data})
+
+
+def Sports(request):
+    news_data = get_news(country="in", category="sports")
+    return render(request, "newsapp/sports.html", context={"mylist": news_data})
+
+
+def Entertainment(request):
+    news_data = get_news(country="in", category="entertainment")
+    return render(request, "newsapp/entertainment.html", context={"mylist": news_data})
+
+
+def Business(request):
+    news_data = get_news(country="in", category="business")
+    return render(request, "newsapp/business.html", context={"mylist": news_data})

@@ -1,7 +1,7 @@
 from newsapi import NewsApiClient
 
 
-def get_news(country: str, category: str, sources=""):
+def get_news(country: str, category: str):
     newsapi = NewsApiClient(api_key="492204b5fab24074b7e237e955eb3218")
     top_headlines = newsapi.get_top_headlines(country=country, category=category)
 
