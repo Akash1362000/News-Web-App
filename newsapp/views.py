@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from newsapi import NewsApiClient
+
 from .forms import UserRegisterForm
 from .services import get_news
 
