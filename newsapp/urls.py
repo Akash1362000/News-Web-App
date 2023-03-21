@@ -8,9 +8,7 @@ from . import views
 
 urlpatterns = [
     path("", views.Home, name="news-home"),
-    path("contact-us", views.ContactUs, name="contact-us"),
-    path("feedback", views.Feedback, name="Feedback"),
-    path("forget", views.Forget, name="forget"),
+    path("register", views.register, name="register"),
     path(
         "login/",
         auth_views.LoginView.as_view(template_name="newsapp/login.html"),
@@ -27,7 +25,6 @@ urlpatterns = [
     path("science", views.Science, name="science"),
     path("business", views.Business, name="business"),
     path("entertainment", views.Entertainment, name="entertainment"),
-    path("register", views.register, name="register"),
     path(
         "serviceworker.js",
         (
