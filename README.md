@@ -9,7 +9,7 @@
 
 News Web App 📰 built using Python Django 🌐 and NewsAPI 🚀 Fetches latest news. 😍 It is a Progressive Web App (PWA) which enables users 👨‍👩‍👦 to install it on their mobile phones 📱 (Android & iOS) as well as Desktop 💻 (Windows, Linux, etc.) 🔥
 
-Checkout the live Website [here](https://newswebapp.herokuapp.com/)!
+Checkout the live Website [here](https://news-web-app-8pf8.onrender.com/)!
 
 Find the detailed project report [here](https://drive.google.com/file/d/1CotBwalG53YZ9wDjjDHIA-nrLDLWkJHn/view?usp=sharing)! 📜
 
@@ -29,13 +29,31 @@ Find the detailed project report [here](https://drive.google.com/file/d/1CotBwal
 </table>
 
 ## Development 🛠
-Note : Make sure you have Python version 3.8+
+Note : Make sure you have Python version 3.8+ and Postgres 14 or above
 
 Environment Setup
 
 `$ git clone https://github.com/Akash1362000/News-Web-App.git`
 
 `$ cd News-Web-App/`
+
+Create `.env` file (refer `.env.example` file)
+
+Generate `SECRET_KEY` from [here](https://djecrety.ir/)
+
+Get your `NEWS_API_KEY` from [here](https://newsapi.org/)
+
+## Database Setup
+
+Install Postgres Latest version from [here](https://www.postgresql.org/download/)
+
+Install pgAdmin from [here](https://www.pgadmin.org/download/)
+
+Create a Database using pgAdmin by following the steps mentioned [here](https://www.tutorialsteacher.com/postgresql/create-database)
+
+Update your `DATABASE_URL` in `.env` with your DB details like `USER`, `PASSWORD` and `DB_NAME`
+
+---
 
 If virtualenv is not installed [(What is virtualenv?)](https://www.youtube.com/watch?v=N5vscPTWKOk&t=313s):
 
@@ -49,11 +67,19 @@ Activate the environment everytime you open the project
 
 `$ source venv/Scripts/activate`
 
-`$ git checkout dev`
-
 Install requirements
 
 `$ pip install -r requirements.txt`
+
+`$ python manage.py migrate`
+
+---
+
+Create superuser
+
+`$ python manage.py createsuperuser`
+
+---
 
 That's it. You're all Set!
 
