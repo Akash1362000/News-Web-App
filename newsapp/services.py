@@ -4,7 +4,10 @@ from newsapi import NewsApiClient
 
 def get_news(country: str, category: str):
     newsapi = NewsApiClient(api_key=settings.NEWS_API_KEY)
-    top_headlines = newsapi.get_top_headlines(country=country, category=category)
+    top_headlines = newsapi.get_top_headlines(
+        country=country,
+        category=category,
+    )
 
     top_articles = top_headlines["articles"]
     description = []

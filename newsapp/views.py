@@ -19,7 +19,8 @@ def register(request):
             username = form.cleaned_data.get("username")
             messages.success(
                 request,
-                f"Account successfully created for { username }. You can now login",
+                f"""Account successfully created for { username }.
+                You can now login""",
             )
             return redirect("login")
     else:
@@ -29,29 +30,53 @@ def register(request):
 
 def Technology(request):
     news_data = get_news(country="in", category="technology")
-    return render(request, "newsapp/technology.html", context={"mylist": news_data})
+    return render(
+        request,
+        "newsapp/technology.html",
+        context={"mylist": news_data},
+    )
 
 
 def Health(request):
     news_data = get_news(country="in", category="health")
-    return render(request, "newsapp/health.html", context={"mylist": news_data})
+    return render(
+        request,
+        "newsapp/health.html",
+        context={"mylist": news_data},
+    )
 
 
 def Science(request):
     news_data = get_news(country="in", category="science")
-    return render(request, "newsapp/science.html", context={"mylist": news_data})
+    return render(
+        request,
+        "newsapp/science.html",
+        context={"mylist": news_data},
+    )
 
 
 def Sports(request):
     news_data = get_news(country="in", category="sports")
-    return render(request, "newsapp/sports.html", context={"mylist": news_data})
+    return render(
+        request,
+        "newsapp/sports.html",
+        context={"mylist": news_data},
+    )
 
 
 def Entertainment(request):
     news_data = get_news(country="in", category="entertainment")
-    return render(request, "newsapp/entertainment.html", context={"mylist": news_data})
+    return render(
+        request,
+        "newsapp/entertainment.html",
+        context={"mylist": news_data},
+    )
 
 
 def Business(request):
     news_data = get_news(country="in", category="business")
-    return render(request, "newsapp/business.html", context={"mylist": news_data})
+    return render(
+        request,
+        "newsapp/business.html",
+        context={"mylist": news_data},
+    )

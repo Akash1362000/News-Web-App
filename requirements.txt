@@ -11,3 +11,4 @@ dj-database-url==1.2.0
 gunicorn==20.1.0
 psutil==5.9.5
 django-health-check==3.17.0
+flake8==6.0.0
