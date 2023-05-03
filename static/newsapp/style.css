@@ -213,7 +213,7 @@ section .container .logo
     top: 120px;
     width: 350px;
     height: calc(150% - 30px);
-    
+
     z-index: 1;
     padding: 40px;
     display: flex;

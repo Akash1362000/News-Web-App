@@ -1,124 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
-<link rel="manifest" href="{% static 'newsapp/manifest.json' %}">
-{% load pwa %}
-<head>
-  {% progressive_web_app_meta %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="{% static 'newsapp/script.js' %}"></script>
-  <!-- Files for Web push Notifications -->
-  <script src="{% static 'newsapp/registerSw.js' %}"></script>
-  <script src="{% static 'newsapp/site.js' %}"></script>
+  {% load static %}
+  <link rel="manifest" href="{% static 'newsapp/manifest.json' %}">
+  {% load pwa %}
+
+  <head>
+    {% progressive_web_app_meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="{% static 'newsapp/script.js' %}"></script>
+    <!-- Files for Web push Notifications -->
+    <script src="{% static 'newsapp/registerSw.js' %}"></script>
+    <script src="{% static 'newsapp/site.js' %}"></script>
 
 
-  <!-- PWA support for IE 11 and Safari -->
-  <meta name="theme-color" content="#c62828">
-  <!-- <link rel="apple-touch-icon" href="{% static 'newsapp/img.png' %}">
+    <!-- PWA support for IE 11 and Safari -->
+    <meta name="theme-color" content="#c62828">
+    <!-- <link rel="apple-touch-icon" href="{% static 'newsapp/img.png' %}">
  -->
 
- <!-- Web Push notification -->
- <meta name="vapid-key" content="{{ vapid_key }}">
+    <!-- Web Push notification -->
+    <meta name="vapid-key" content="{{ vapid_key }}">
     {% if user.id %}
-        <meta name="user_id" content="{{ user.id }}">
+    <meta name="user_id" content="{{ user.id }}">
     {% endif %}
 
-  {% block head %}{% endblock %}
-</head>
+    {% block head %}{% endblock %}
+  </head>
 
-<body>
-  <style>
-    a:link{
-      text-decoration: none;
-    }
-    .card {
-      height:750px;
-     }
-  </style>
-  <nav>
-    <div class="nav-wrapper" style="padding: 0px 50px; background-color: #c62828">
-      <a href="{% url 'news-home' %}" class="brand-logo">NewsApp</a>
-      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="{% url 'news-home' %}">Home</a></li>
-        <li><a href="{% url 'business' %}">Business</a></li>
-        <li><a href="{% url 'entertainment' %}">Entertainment</a></li>
-        <li><a class="dropdown-trigger" data-target="dropdown1">More Categories</a></li>
-        {% if user.is_authenticated %}
+  <body>
+    <style>
+      a:link {
+        text-decoration: none;
+      }
+
+      .card {
+        height: 750px;
+      }
+    </style>
+    <nav>
+      <div class="nav-wrapper" style="padding: 0px 50px; background-color: #c62828">
+        <a href="{% url 'news-home' %}" class="brand-logo">NewsApp</a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{% url 'news-home' %}">Home</a></li>
+          <li><a href="{% url 'business' %}">Business</a></li>
+          <li><a href="{% url 'entertainment' %}">Entertainment</a></li>
+          <li><a class="dropdown-trigger" data-target="dropdown1">More Categories</a></li>
+          {% if user.is_authenticated %}
           <li><a href="{% url 'logout' %}" class="waves-effect waves-light btn green">Logout</a></li>
-        {% else %}
+          {% else %}
           <li><a href="{% url 'login' %}" class="waves-effect waves-light btn green">Login</a></li>
           <li><a href="{% url 'register' %}" class="waves-effect waves-light btn yellow black-text">Signup</a></li>
-        {% endif %}
-      </ul>
-    </div>
-  </nav>
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
+          {% endif %}
+        </ul>
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="black-text name">{{ user.username }}</span></a>
-      <span class="black-text email">{{ user.email }}</span>
-    </div></li>
-    <li><a href="{% url 'news-home' %}" class="waves-effect"><i class="material-icons">home</i>Home</a></li>
-    <li><div class="divider"></div></li>
-    <li><a href="{% url 'business' %}" class="waves-effect"><i class="material-icons">business</i>Business</a></li>
-    <li><a href="{% url 'entertainment' %}" class="waves-effect"><i class="material-icons">beach_access</i>Entertainment</a></li>
-    <li><a href="{% url 'technology' %}" class="waves-effect"><i class="material-icons">computer</i>Technology</a></li>
-    <li><a href="{% url 'sports' %}" class="waves-effect"><i class="material-icons">directions_bike</i>Sports</a></li>
-    <li><a href="{% url 'health' %}" class="waves-effect"><i class="material-icons">healing</i>Health</a></li>
-    <li><a href="{% url 'science' %}" class="waves-effect"><i class="material-icons">biotech</i>Science</a></li>
-    <li><div class="divider"></div></li>
-    {% if user.is_authenticated %}
+    </nav>
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="images/office.jpg">
+          </div>
+          <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+          <a href="#name"><span class="black-text name">{{ user.username }}</span></a>
+          <span class="black-text email">{{ user.email }}</span>
+        </div>
+      </li>
+      <li><a href="{% url 'news-home' %}" class="waves-effect"><i class="material-icons">home</i>Home</a></li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      <li><a href="{% url 'business' %}" class="waves-effect"><i class="material-icons">business</i>Business</a></li>
+      <li><a href="{% url 'entertainment' %}" class="waves-effect"><i
+            class="material-icons">beach_access</i>Entertainment</a></li>
+      <li><a href="{% url 'technology' %}" class="waves-effect"><i class="material-icons">computer</i>Technology</a>
+      </li>
+      <li><a href="{% url 'sports' %}" class="waves-effect"><i class="material-icons">directions_bike</i>Sports</a></li>
+      <li><a href="{% url 'health' %}" class="waves-effect"><i class="material-icons">healing</i>Health</a></li>
+      <li><a href="{% url 'science' %}" class="waves-effect"><i class="material-icons">biotech</i>Science</a></li>
+      <li>
+        <div class="divider"></div>
+      </li>
+      {% if user.is_authenticated %}
       <li><a href="{% url 'logout' %}" class="waves-effect"><i class="material-icons">person</i>Logout</a></li>
-    {% else %}
+      {% else %}
       <li><a href="{% url 'login' %}" class="waves-effect"><i class="material-icons">person</i>Login</a></li>
       <li><a href="{% url 'register' %}" class="waves-effect"><i class="material-icons">person_add</i>Signup</a></li>
-    {% endif %}
-    <li><a href="#!" class="waves-effect"><i class="material-icons">announcement</i>About Us!</a></li>
-    <li><a href="#!" class="waves-effect"><i class="material-icons">contact_phone</i>Contact Us</a></li>
-  </ul>            
+      {% endif %}
+      <li><a href="#!" class="waves-effect"><i class="material-icons">announcement</i>About Us!</a></li>
+      <li><a href="#!" class="waves-effect"><i class="material-icons">contact_phone</i>Contact Us</a></li>
+    </ul>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="{% url 'technology' %}">Technology</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="{% url 'sports' %}">Sports</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="{% url 'health' %}">Health</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="{% url 'science' %}">Science</a></li>
-  </ul>
-  {% if messages %}
-  <div class="row container">
-    <div class="col s12 m5">
-      <div class="card-panel teal">
-        <span class="white-text">
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="{% url 'technology' %}">Technology</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="{% url 'sports' %}">Sports</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="{% url 'health' %}">Health</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="{% url 'science' %}">Science</a></li>
+    </ul>
+    {% if messages %}
+    <div class="row container">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <span class="white-text">
             {% for message in messages %}
-              {{ message }}
+            {{ message }}
             {% endfor %}
-        </span>
+          </span>
+        </div>
       </div>
     </div>
-  </div>
-  {% endif %}
-  <!-- <div class="col-md-8">
+    {% endif %}
+    <!-- <div class="col-md-8">
     {% if messages %}
       {% for message in messages %}
         <div class="alert">{{ message }}</div>
@@ -126,39 +136,42 @@
     {% endif %}
   </div> -->
 
-  <!-- Body -->
-  {% block body %}{% endblock %}
+    <!-- Body -->
+    {% block body %}{% endblock %}
 
-  <!-- footer -->
-  <footer class="page-footer black">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">NewsApp</h5>
-          <p class="grey-text text-lighten-4">Get all the latest news at one place, just a touch away!</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Quick Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="{% url 'business' %}">Business</a></li>
-            <li><a class="grey-text text-lighten-3" href="{% url 'entertainment' %}">Entertainment</a></li>
-            <li><a class="grey-text text-lighten-3" href="{% url 'technology' %}">Technology</a></li>
-            <li><a class="grey-text text-lighten-3" href="{% url 'sports' %}">Sports</a></li>
-            <li><a class="grey-text text-lighten-3" href="{% url 'health' %}">Health</a></li>
-            <li><a class="grey-text text-lighten-3" href="{% url 'science' %}">Science</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+    <!-- footer -->
+    <footer class="page-footer black">
       <div class="container">
-      © 2020 SASA NewsApp
-      <p>Created by <a href="https://akash1362000.github.io" target="_blank">Akash Shrivastava</a> | <a href="https://www.linkedin.com/in/akanksha-tamboli-354852184/" target="_blank">Akanksha Tamboli</a> | <a href="https://www.linkedin.com/in/samiksha-naik-9a5b531a9" target="_blank">Samiksha Naik</a> | <a href="https://www.linkedin.com/in/shreejit-nair-b6591b1ba" target="_blank">Shreejit Nair</a></p>
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">NewsApp</h5>
+            <p class="grey-text text-lighten-4">Get all the latest news at one place, just a touch away!</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Quick Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="{% url 'business' %}">Business</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'entertainment' %}">Entertainment</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'technology' %}">Technology</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'sports' %}">Sports</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'health' %}">Health</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'science' %}">Science</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2020 SASA NewsApp
+          <p>Created by <a href="https://akash1362000.github.io" target="_blank">Akash Shrivastava</a> | <a
+              href="https://www.linkedin.com/in/akanksha-tamboli-354852184/" target="_blank">Akanksha Tamboli</a> | <a
+              href="https://www.linkedin.com/in/samiksha-naik-9a5b531a9" target="_blank">Samiksha Naik</a> | <a
+              href="https://www.linkedin.com/in/shreejit-nair-b6591b1ba" target="_blank">Shreejit Nair</a></p>
+        </div>
+      </div>
+    </footer>
 
-  <!-- <script>
+    <!-- <script>
     if (!navigator.serviceWorker.controller) {
         navigator.serviceWorker.register("{% static 'newsapp/sw.js' %}").then(function(reg) {
             console.log("Service worker has been registered for scope: " + reg.scope);

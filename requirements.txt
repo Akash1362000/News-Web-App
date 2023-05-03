@@ -4,11 +4,9 @@ django-crispy-forms==1.9.0
 crispy-forms-materialize==0.2
 django-materializecss-form==1.1.17
 newsapi-python==0.2.6
-black==23.1.0
 python-dotenv==1.0.0
 psycopg2-binary==2.9.5
 dj-database-url==1.2.0
 gunicorn==20.1.0
 psutil==5.9.5
 django-health-check==3.17.0
-flake8==6.0.0
