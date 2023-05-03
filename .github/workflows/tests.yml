@@ -1,0 +1,39 @@
+name: Tests
+on:
+  push:
+    branches: 
+      - '*'
+  pull_request:
+    branches: 
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11.3']
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 🐍 ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Lint
+        run: flake8
+
+      - name: Run Unit Tests ⚒
+        env:
+          DEBUG: False
+          SECRET_KEY: "RANDOM_KEY"
+          DATABASE_URL: "postgres://postgres:user@localhost:5432/db_name"
+          NEWS_API_KEY: "RANDOM_KEY"
+        run: |
+          python manage.py collectstatic --no-input
+          python manage.py test
