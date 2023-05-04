@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/newsapp
+    ports:
+      - 8000:8000
+    image: news_web_app:django
+    container_name: news_web_app
+    command:
+      - /bin/bash
+      - -c
+      - |
+        python3 manage.py migrate
+        python3 manage.py collectstatic --noinput
+        python3 manage.py runserver 0.0.0.0:8000
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=d20t^a$sgf2dsic^vlz9*lza@8=^8(e$o4dyu1s_mnrx)uy@hx
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+      - NEWS_API_KEY=replace_it_with_your_api_key
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5440:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: news_web_app_db
