@@ -107,6 +107,8 @@ If you want to use Docker to run this project, you need to do the following step
 - Run `docker compose up -d`
 - Run `docker exec -it news_web_app sh -c "python manage.py createsuperuser"` to create a new superuser
 - Access the app at [http://localhost:8000](http://localhost:8000)
+- To stop the container, run `docker compose down` from the project root
+- To restart the container, run `docker compose start` from the project root
 
 ---
 
