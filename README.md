@@ -71,6 +71,8 @@ Install requirements
 
 `$ pip install -r requirements.txt`
 
+`$ pre-commit install`
+
 `$ python manage.py migrate`
 
 ---
@@ -92,6 +94,22 @@ Open your desired browser and head over to [http://127.0.0.1:8000/](http://127.0
 To exit the environment
 
 `$ deactivate `
+
+---
+## Docker Setup (Optional) ![](https://skillicons.dev/icons?i=docker)
+
+If you want to use Docker to run this project, you need to do the following steps:
+- Install Docker for your OS from [here](https://www.docker.com/products/docker-desktop/)
+- Run `docker --version` and `docker compose --version` [In Windows, you need to run `docker-compose --version` to check the version]
+- If you see both the versions, then Docker is successfully installed on your system and you can follow along
+- If you don't see the version, check with your Docker installation
+- Open `docker-compose.yml` file and update the value of `NEWS_API_KEY` with your generated key. You can generate it from [here](https://newsapi.org/) 
+- Run `docker compose up -d`
+- Run `docker exec -it news_web_app sh -c "python manage.py createsuperuser"` to create a new superuser
+- Access the app at [http://localhost:8000](http://localhost:8000)
+
+---
+
 
 ### License ✍
 
